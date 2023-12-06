@@ -12,11 +12,9 @@ export default function Summary() {
   };
   return (
     <div className="container">
-      <span className="results">
-        Results for:
-        <span className="city-name">
-          <strong>{weatherData.city}</strong>
-        </span>
+      <span className="results">Results for:</span>
+      <span className="city-name">
+        <strong>{weatherData.city}</strong>
       </span>
       <br />
       <br />

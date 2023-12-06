@@ -46,7 +46,8 @@ form {
   font-family: arial, sans-serif;
   font-size: 14px;
   line-height: 22px;
-  display: flex;
+  color: #e8eaed;
+  margin-right: 5px;
 }
 .city-name {
   color: #bdc1c5;
@@ -85,6 +86,7 @@ form {
 .humidity-wind {
   font-size: 12px;
   margin-left: 10px;
+  color: #e8eaed;
 }
 .weather-overview {
   text-align: right;
@@ -97,6 +99,7 @@ form {
 .day-and-time,
 .weather-description {
   font-size: 16px;
+  color: #e8eaed;
 }
 .weather-forecast {
   text-align: center;
