@@ -1,6 +1,5 @@
 body {
   font-family: arial, sans-serif;
-  background-color: #202124;
 }
 ul,
 li {
@@ -17,6 +16,10 @@ a {
 }
 form {
   display: flex;
+}
+
+.search-bar {
+  margin-right: 15px;
 }
 
 .weather-app-wrapper {

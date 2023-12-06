@@ -6,7 +6,7 @@ export default function SearchBar() {
       <form id="search-field" role="search">
         <input
           type="search"
-          className="form-control me-2"
+          className="form-control search-bar"
           placeholder="Type a city..."
           id="city-input"
         />
