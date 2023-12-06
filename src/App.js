@@ -1,12 +1,11 @@
 import "./App.css";
-import Weather from "./Weather";
+import SearchBar from "./SearchBar";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Why isn't this working?</h1>
-        <Weather />
+        <SearchBar />
       </header>
     </div>
   );
