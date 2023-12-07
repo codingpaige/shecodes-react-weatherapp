@@ -41,7 +41,6 @@ form {
   color: white;
   border-color: white;
 }
-
 #search-button:hover {
   background-color: #ec6e4b;
 }
@@ -51,6 +50,12 @@ form {
   line-height: 22px;
   color: #e8eaed;
   margin-right: 5px;
+}
+.results-for-city {
+  text-align: left;
+}
+.summary-section {
+  margin-bottom: 20px;
 }
 .city-name {
   color: #bdc1c5;

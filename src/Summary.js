@@ -12,13 +12,15 @@ export default function Summary() {
   };
   return (
     <div className="container">
-      <span className="results">Results for:</span>
-      <span className="city-name">
-        <strong>{weatherData.city}</strong>
-      </span>
+      <div className="results-for-city">
+        <span className="results">Results for:</span>
+        <span className="city-name">
+          <strong>{weatherData.city}</strong>
+        </span>
+      </div>
       <br />
       <br />
-      <div className="row">
+      <div className="row summary-section">
         <div className="col-7">
           <div className="d-flex current-weather-icon">
             <img
@@ -28,15 +30,15 @@ export default function Summary() {
               className="float-left"
             />
             <div className="temp-value">{weatherData.temperature}</div>
-            <span class="temp-metrics">°C</span>
+            <span className="temp-metrics">°C</span>
             <ul>
-              <div class="humidity-wind">
+              <div className="humidity-wind">
                 <li>
-                  Humidity: <span class="humidity">{weatherData.humidity}</span>
-                  %
+                  Humidity:{" "}
+                  <span className="humidity">{weatherData.humidity}</span>%
                 </li>
                 <li>
-                  Wind: <span class="wind">{weatherData.wind}</span>km/h
+                  Wind: <span className="wind">{weatherData.wind}</span>km/h
                 </li>
               </div>
             </ul>
