@@ -13,6 +13,17 @@ function App() {
             <Summary />
             <Forecast />
           </div>
+          <small>
+            This weather app is{" "}
+            <a
+              href="https://github.com/codingpaige/shecodes-react-weatherapp"
+              target="_blank"
+              rel="noreferrer"
+            >
+              open-sourced
+            </a>{" "}
+            & coded by Paige.
+          </small>
         </div>
       </header>
     </div>
