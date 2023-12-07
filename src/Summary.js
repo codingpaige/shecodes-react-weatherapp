@@ -49,7 +49,9 @@ export default function Summary() {
                     <span className="humidity">{weatherData.humidity}</span>%
                   </li>
                   <li>
-                    Wind: <span className="wind">{weatherData.wind}</span>km/h
+                    Wind:{" "}
+                    <span className="wind">{Math.round(weatherData.wind)}</span>
+                    km/h
                   </li>
                 </div>
               </ul>
