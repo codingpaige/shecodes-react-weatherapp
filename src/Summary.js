@@ -15,7 +15,6 @@ export default function Summary() {
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
       iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-      date: "Wednesday 7 Sep 08:00",
     });
   }
 
@@ -63,9 +62,7 @@ export default function Summary() {
                   <span className="weather-heading">Weather</span>
                 </li>
                 <li>
-                  <span className="day-and-time">
-                    {weatherData.date}Pending D and T
-                  </span>
+                  <span className="day-and-time">Wednesday 08:00</span>
                 </li>
                 <li>
                   <span className="weather-description text-capitalize">
