@@ -1,24 +1,23 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-export default function Summary() {
-  let [loaded, setLoaded] = useState("");
-  const [weatherData, setWeatherData] = useState(null);
+export default function Summary(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleSearch(response) {
-    console.log(response.data);
-    setLoaded(true);
     setWeatherData({
+      ready: true,
       city: response.data.name,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
       iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      date: console.log(response.data),
     });
   }
 
-  if (loaded) {
+  if (weatherData.ready) {
     return (
       <div className="container">
         <div className="results-for-city">
@@ -64,7 +63,9 @@ export default function Summary() {
                   <span className="weather-heading">Weather</span>
                 </li>
                 <li>
-                  <span className="day-and-time">Wednesday 08:00</span>
+                  <span className="day-and-time">
+                    {weatherData.date} Wednesday 08:00
+                  </span>
                 </li>
                 <li>
                   <span className="weather-description text-capitalize">

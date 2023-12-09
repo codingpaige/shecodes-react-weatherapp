@@ -11,7 +11,7 @@ function App() {
         <div className="weather-app-wrapper">
           <div className="weather-app">
             <SearchBar />
-            <Summary />
+            <Summary defaultCity="Brisbane" />
             <Forecast />
           </div>
           <small>
