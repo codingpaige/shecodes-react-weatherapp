@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 
 export default function Summary(props) {
@@ -13,7 +14,7 @@ export default function Summary(props) {
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
       iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-      date: console.log(response.data),
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -64,7 +65,7 @@ export default function Summary(props) {
                 </li>
                 <li>
                   <span className="day-and-time">
-                    {weatherData.date} Wednesday 08:00
+                    <FormattedDate date={weatherData.date} />
                   </span>
                 </li>
                 <li>
