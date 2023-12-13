@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
-import SearchBar from "./SearchBar";
-import Summary from "./Summary";
+import Weather from "./Weather";
+import WeatherInfo from "./WeatherInfo";
 import Forecast from "./Forecast";
 
 function App() {
@@ -10,8 +10,8 @@ function App() {
       <header className="App-header">
         <div className="weather-app-wrapper">
           <div className="weather-app">
-            <SearchBar />
-            <Summary defaultCity="Brisbane" />
+            <Weather />
+            <WeatherInfo defaultCity="Brisbane" />
             <Forecast />
           </div>
           <small>
