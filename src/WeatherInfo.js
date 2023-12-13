@@ -1,90 +1,64 @@
-import React, { useState } from "react";
+import React from "react";
 import FormattedDate from "./FormattedDate";
-import axios from "axios";
 
-export default function Summary(props) {
-  const [weatherData, setWeatherData] = useState({ ready: false });
-
-  function handleSearch(response) {
-    setWeatherData({
-      ready: true,
-      city: response.data.name,
-      temperature: response.data.main.temp,
-      humidity: response.data.main.humidity,
-      wind: response.data.wind.speed,
-      description: response.data.weather[0].description,
-      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-      date: new Date(response.data.dt * 1000),
-    });
-  }
-
-  if (weatherData.ready) {
-    return (
-      <div className="container">
-        <div className="results-for-city">
-          <span className="results">Results for:</span>
-          <span className="city-name">
-            <strong>{weatherData.city}</strong>
-          </span>
-        </div>
-        <br />
-        <br />
-        <div className="row summary-section">
-          <div className="col-7">
-            <div className="d-flex current-weather-icon">
-              <img
-                id="weather-icon"
-                src={weatherData.iconUrl}
-                alt={weatherData.description}
-                className="float-left"
-              />
-              <div className="temp-value">
-                {Math.round(weatherData.temperature)}
+export default function WeatherInfo(props) {
+  return (
+    <div className="container">
+      <div className="results-for-city">
+        <span className="results">Results for:</span>
+        <span className="city-name">
+          <strong>{props.data.city}</strong>
+        </span>
+      </div>
+      <br />
+      <br />
+      <div className="row summary-section">
+        <div className="col-7">
+          <div className="d-flex current-weather-icon">
+            <img
+              id="weather-icon"
+              src={props.data.iconUrl}
+              alt={props.data.description}
+              className="float-left"
+            />
+            <div className="temp-value">
+              {Math.round(props.data.temperature)}
+            </div>
+            <span className="temp-metrics">°C</span>
+            <ul>
+              <div className="humidity-wind">
+                <li>
+                  Humidity:{" "}
+                  <span className="humidity">{props.data.humidity}</span>%
+                </li>
+                <li>
+                  Wind: <span className="wind">{props.data.wind}</span>
+                  km/h
+                </li>
               </div>
-              <span className="temp-metrics">°C</span>
-              <ul>
-                <div className="humidity-wind">
-                  <li>
-                    Humidity:{" "}
-                    <span className="humidity">{weatherData.humidity}</span>%
-                  </li>
-                  <li>
-                    Wind:{" "}
-                    <span className="wind">{Math.round(weatherData.wind)}</span>
-                    km/h
-                  </li>
-                </div>
-              </ul>
-            </div>
+            </ul>
           </div>
-          <div className="col-5">
-            <div className="weather-overview">
-              <ul>
-                <li>
-                  <span className="weather-heading">Weather</span>
-                </li>
-                <li>
-                  <span className="day-and-time">
-                    <FormattedDate date={weatherData.date} />
-                  </span>
-                </li>
-                <li>
-                  <span className="weather-description text-capitalize">
-                    {weatherData.description}
-                  </span>
-                </li>
-              </ul>
-            </div>
+        </div>
+        <div className="col-5">
+          <div className="weather-overview">
+            <ul>
+              <li>
+                <span className="weather-heading">Weather</span>
+              </li>
+              <li>
+                <span className="day-and-time">
+                  <FormattedDate date={props.data.date} />
+                </span>
+              </li>
+              <li>
+                <span className="weather-description text-capitalize">
+                  {props.data.description}
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    );
-  } else {
-    const apiKey = `3980a7c8f2a782241a093131b099f993`;
-    let city = "Brisbane";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleSearch);
-
-    return "Loading...";
-  }
+    </div>
+  );
 }

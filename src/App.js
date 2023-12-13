@@ -1,8 +1,6 @@
 import "./App.css";
 import React from "react";
 import Weather from "./Weather";
-import WeatherInfo from "./WeatherInfo";
-import Forecast from "./Forecast";
 
 function App() {
   return (
@@ -10,9 +8,7 @@ function App() {
       <header className="App-header">
         <div className="weather-app-wrapper">
           <div className="weather-app">
-            <Weather />
-            <WeatherInfo defaultCity="Brisbane" />
-            <Forecast />
+            <Weather defaultCity="Brisbane" />
           </div>
           <small>
             This weather app is{" "}
