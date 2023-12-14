@@ -66,7 +66,7 @@ small {
 .city-name {
   color: #bdc1c5;
 }
-.current-weather-icon img {
+.current-weather-icon canvas {
   margin-right: 5px;
 }
 .temp-value {
