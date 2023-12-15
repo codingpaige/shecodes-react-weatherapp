@@ -66,25 +66,28 @@ small {
 .city-name {
   color: #bdc1c5;
 }
-.current-weather-icon {
-  margin-right: 5px;
+.current-weather-icon img {
+  margin-right: 3px;
 }
 .temp-value {
   font-weight: 400;
-  font-size: 48px;
+  font-size: 60px;
   color: #e8eaed;
   text-align: left;
 }
 
 .humidity-wind,
-.weather-overview,
-.temp-metrics {
+.weather-overview {
   margin-top: 13px;
+  position: relative;
+  bottom: -7px;
 }
 .temp-metrics {
   font-size: 16px;
   display: inline;
   color: #e8eaed;
+  position: relative;
+  top: -30px;
 }
 
 #celsius-metric {
