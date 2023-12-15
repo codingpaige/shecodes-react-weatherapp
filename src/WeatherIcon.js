@@ -20,13 +20,13 @@ export default function WeatherIcon(props) {
     "13d": "snow.svg",
     "13n": "snow.svg",
     "50d": "mist.svg",
-    "50n": "mist.svg",
+    "50n": "clear-night.svg",
   };
   return (
     <img
       src={`/animatedweathericons/${codeMapping[props.code]}`}
       alt="weather icon"
-      width="100px"
+      width={props.width}
     />
   );
 }

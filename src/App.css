@@ -110,12 +110,12 @@ small {
   line-height: 20px;
 }
 .weather-heading {
-  font-size: 22px;
+  font-size: 20px;
   color: #e8eaed;
 }
 .day-and-time,
 .weather-description {
-  font-size: 16px;
+  font-size: 14px;
   color: #e8eaed;
 }
 .weather-forecast {
