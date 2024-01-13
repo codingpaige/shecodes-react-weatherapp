@@ -15,7 +15,7 @@ function App() {
             <a
               href="https://github.com/codingpaige/shecodes-react-weatherapp"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               open-sourced
             </a>{" "}
